@@ -1,4 +1,4 @@
-// server.js
+// server.js - ACTUALIZAR CONFIGURACIÓN CORS
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -11,7 +11,18 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+// 👇 CONFIGURACIÓN CORS CON LA URL DE NETLIFY
+const corsOptions = {
+    origin: [
+        'https://royalcut1.netlify.app/',  // 👈 TU URL DE NETLIFY
+        'http://localhost:5500',
+        'http://127.0.0.1:5500'
+    ],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/appointments', appointmentRoutes);
