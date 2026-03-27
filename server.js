@@ -14,7 +14,7 @@ connectDB();
 // 👇 CONFIGURACIÓN CORS CON LA URL DE NETLIFY
 const corsOptions = {
     origin: [
-        'https://royalcut1.netlify.app/',  // 👈 TU URL DE NETLIFY
+        'https://royalcut1.netlify.app',  // 👈 TU URL DE NETLIFY
         'http://localhost:5500',
         'http://127.0.0.1:5500'
     ],
